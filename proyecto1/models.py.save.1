@@ -1,0 +1,20 @@
+auto# Create your models here.
+
+from django.db import models
+from django.utils import timezone
+
+class Producto(models.Model):
+   idProducto = models.ForeignKey('auth.User')
+   nombre =  models.CharField(max_length=200)
+   descripcion = models.TextField()
+   precio = models.TextField()
+   fecha_ingreso = models.DateTimeField(default=timezone.now)
+   
+
+def publish(self):
+  self.fecha_ingreso = timezone.now()
+  self.save()
+
+def __str__(self):
+  return self.nombre
+
